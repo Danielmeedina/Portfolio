@@ -1,0 +1,303 @@
+---
+import Gmail from "../icons/Gmail.astro";
+import Illustration2 from "../imgs/Illustration2.astro";
+---
+
+<section id="contact">
+  <h2 class="contact-title">Trabajemos Juntos</h2>
+  <div class="card-container">
+    <aside class="info">
+      <a
+        href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=danielmedina7778@gmail.com"
+        class="contact-gmail"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Gmail width="30" height="20" />Gmail
+      </a>
+      <span class="divider"></span>
+      <form
+        action="https://formsubmit.co/danielmedina7778@gmail.com"
+        method="POST"
+      >
+        <div class="input-container">
+          <input
+            type="text"
+            id="name"
+            name="Nombre"
+            required=""
+            autocomplete="off"
+          />
+          <label for="name" class="label">Nombre</label>
+        </div>
+        <div class="input-container">
+          <input
+            type="email"
+            id="email"
+            name="Email"
+            required=""
+            autocomplete="off"
+          />
+          <label for="email" class="label">Correo</label>
+        </div>
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="box" />
+        <textarea
+          class="comment"
+          name="Comentario"
+          cols="27"
+          rows="6"
+          placeholder="Deja tu mensaje"></textarea>
+        <button type="submit">
+          <div class="svg-wrapper-1">
+            <div class="svg-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  fill="currentColor"
+                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span>Enviar</span>
+        </button>
+      </form>
+    </aside>
+    <div class="box-img animated">
+      <Illustration2 />
+    </div>
+  </div>
+</section>
+
+<style>
+  #contact {
+    width: var(--container);
+    margin: 30px auto 0;
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    margin-bottom: 10px;
+  }
+  .contact-title {
+    font-weight: 700;
+    font-size: var(--text-5);
+    text-align: center;
+    color: transparent;
+    text-stroke: 3px rgb(var(--primary-color));
+    -webkit-text-stroke: 3px rgb(var(--primary-color));
+    margin-bottom: 20px;
+  }
+
+  .card-container {
+    width: clamp(300px, 100%, 1100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+    gap: 10px;
+  }
+
+  .box-img {
+    width: clamp(300px, 100%, 500px);
+    /* flex: 1 1; */
+    animation-name: box-img;
+    animation-range: entry 40% cover 60%;
+  }
+  @keyframes box-img {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .info {
+    width: clamp(300px, 100%, 320px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    padding: 10px;
+    border: 1px solid rgb(var(--primary-color));
+    border-radius: 5px;
+  }
+
+  .contact-gmail {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(var(--primary-color));
+    color: rgb(var(--text-color));
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .contact-gmail:hover {
+    background-color: rgb(var(--primary-color));
+    color: black;
+  }
+
+  .divider {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    margin-bottom: 40px;
+    background-color: rgb(var(--primary-color));
+  }
+
+  .divider:after {
+    content: "O";
+    position: absolute;
+    text-align: center;
+    color: rgb(var(--text-color));
+    background-color: rgb(var(--bg-color-3));
+    padding: 0 10px;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+
+  .info form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+  }
+
+  .input-container {
+    width: 100%;
+    position: relative;
+  }
+
+  .input-container input {
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    color: rgb(var(--text-color));
+    border-bottom: 2px solid rgb(var(--text-color));
+    background-color: transparent;
+    outline: none;
+    margin-bottom: 35px;
+  }
+
+  .input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(var(--text-color) / 0.8);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .input-container input:is(:focus, :valid) ~ .label {
+    top: -20px;
+    font-size: 16px;
+    color: rgb(var(--text-color) / 0.8);
+  }
+
+  .comment {
+    padding: 5px;
+    resize: none;
+    background-color: transparent;
+    color: rgb(var(--text-color));
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .comment::placeholder {
+    color: rgb(var(--text-color));
+  }
+
+  .comment::-webkit-scrollbar {
+    width: 4px;
+    background-color: transparent;
+  }
+
+  .comment::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--primary-color));
+  }
+
+  button {
+    font-family: inherit;
+    font-size: 18px;
+    background: rgb(var(--primary-color) / 0.5);
+    color: rgb(var(--text-color));
+    padding: 10px;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  button span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  button:is(:hover, :active, :focus) .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+
+  button:is(:hover, :active, :focus) svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+
+  button:is(:hover, :active, :focus) span {
+    transform: translateX(5em);
+  }
+
+  button:active {
+    transform: scale(0.95);
+  }
+
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+
+    to {
+      transform: translateY(-0.1em);
+    }
+  }
+
+  @media (width < 771px) {
+    .card-container {
+      flex-flow: column-reverse nowrap;
+      gap: 0;
+    }
+  }
+</style>
+
+<script>
+  const gmail = document.querySelector(".contact-gmail");
+
+  if ("ontouchstart" in window || navigator.maxTouchPoints) {
+    gmail.setAttribute("href", "mailto:danielmedina7778@gmail.com");
+  }
+</script>

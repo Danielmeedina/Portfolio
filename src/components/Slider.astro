@@ -1,0 +1,135 @@
+---
+import AstroIcon from "../icons/AstroIcon.astro";
+import CssIcon from "../icons/CssIcon.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
+import GitIcon from "../icons/GitIcon.astro";
+import HtmlIcon from "../icons/HtmlIcon.astro";
+import JavascriptIcon from "../icons/JavascriptIcon.astro";
+import Mongodb from "../icons/Mongodb.astro";
+import NextjsIcon from "../icons/NextjsIcon.astro";
+import Nodejs from "../icons/Nodejs.astro";
+import ReactIcon from "../icons/ReactIcon.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import Typescript from "../icons/Typescript.astro";
+---
+
+<div class="slider">
+  <div class="slide-track">
+    <figure class="slide">
+      <HtmlIcon width="60" height="60" />
+      <figcaption>HTML</figcaption>
+    </figure>
+    <figure class="slide">
+      <CssIcon width="60" height="60" />
+      <figcaption>CSS</figcaption>
+    </figure>
+    <figure class="slide">
+      <Tailwind width="60" height="60" />
+      <figcaption>Tailwind</figcaption>
+    </figure>
+    <figure class="slide">
+      <JavascriptIcon width="60" height="60" />
+      <figcaption>JavaScript</figcaption>
+    </figure>
+    <figure class="slide">
+      <Typescript width="60" height="60" />
+      <figcaption>TypeScript</figcaption>
+    </figure>
+    <figure class="slide">
+      <GithubIcon width="60" height="60" />
+      <figcaption>Github</figcaption>
+    </figure>
+    <figure class="slide">
+      <GitIcon width="60" height="60" />
+      <figcaption>Git</figcaption>
+    </figure>
+    <figure class="slide">
+      <AstroIcon width="60" height="60" />
+      <figcaption>Astro</figcaption>
+    </figure>
+    <figure class="slide">
+      <NextjsIcon width="60" height="60" />
+      <figcaption>Nextjs</figcaption>
+    </figure>
+    <figure class="slide">
+      <ReactIcon width="60" height="60" />
+      <figcaption>React</figcaption>
+    </figure>
+    <figure class="slide">
+      <Nodejs width="60" height="60" />
+      <figcaption>Nodejs</figcaption>
+    </figure>
+    <figure class="slide">
+      <Mongodb width="60" height="60" />
+      <figcaption>MongoDB</figcaption>
+    </figure>
+  </div>
+</div>
+
+<style>
+  .slider {
+    width: var(--container);
+    height: 100px;
+    margin: 5px auto 15px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slider:hover .slide-track {
+    animation-play-state: paused;
+  }
+
+  .slide-track {
+    --amount: -85px;
+    animation: scroll 5s linear infinite alternate;
+    display: flex;
+    width: calc(180px * 12);
+    gap: 10px;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(60px);
+    }
+    100% {
+      transform: translateX(calc(var(--amount) * 12));
+    }
+  }
+
+  .slide {
+    padding: 10px;
+    width: 180px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: rgb(var(--text-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    gap: 10px;
+  }
+  .slide figcaption {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  @media (width <= 1024px) {
+    .slide-track {
+      --amount: -115px;
+    }
+  }
+  @media (width <= 800px) {
+    .slide-track {
+      --amount: -125px;
+    }
+  }
+  @media (width <= 660px) {
+    .slide-track {
+      --amount: -150px;
+    }
+  }
+  @media (width <= 440px) {
+    .slide-track {
+      --amount: -170px;
+    }
+  }
+</style>

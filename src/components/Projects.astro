@@ -1,0 +1,402 @@
+---
+import AstroIcon from "../icons/AstroIcon.astro";
+import CssIcon from "../icons/CssIcon.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
+import ReactIcon from "../icons/ReactIcon.astro";
+import LinkIcon from "../icons/LinkIcon.astro";
+import Mongodb from "../icons/Mongodb.astro";
+import Nodejs from "../icons/Nodejs.astro";
+import GearIcon from "../icons/GearIcon.astro";
+import Typescript from "../icons/Typescript.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import NextjsIcon from "../icons/NextjsIcon.astro";
+import Arrow from "../icons/Arrow.astro";
+---
+
+<section id="projects">
+  <div class="title animated">
+    <h2>Proyectos</h2>
+  </div>
+  <article class="project card1 animated">
+    <h3 style="font-size: var(--text-3);">Tricks Web</h3>
+    <p>
+      Aquí encontrarás una variedad de trucos. Aprenderás nuevas cosas.
+      Descubrirás cosas que no sabías, todo esto por <span style="color: red"
+        >❤</span
+      > al desarrollo web
+    </p>
+    <div class="tech">
+      <AstroIcon />
+      <CssIcon />
+      <Typescript />
+    </div>
+    <div class="links">
+      <a
+        href="https://github.com/Danielmeedina/Tricks-Web"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="ir al proyecto de Tricks web en github"
+      >
+        <GithubIcon width="25" height="25" />
+         github
+      </a>
+      <a
+        href="https://tricksweb.netlify.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="ir a la pagina de Tricks web"
+      >
+        <LinkIcon width="20" height="20" />
+         web
+      </a>
+    </div>
+  </article>
+  <article class="project card2 animated">
+    <h3 style="font-size: var(--text-2);">Guardian Tales</h3>
+    <div class="tech">
+      <ReactIcon />
+      <CssIcon />
+    </div>
+    <div class="links">
+      <a
+        href="https://github.com/Danielmeedina/guardian-tales"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="ir al proyecto de guardian tales en github"
+      >
+        <GithubIcon width="25" height="25" />
+         github
+      </a>
+      <a
+        href="https://guardiantales.netlify.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="ir a pagina web de guardian tales"
+      >
+        <LinkIcon width="20" height="20" />
+         web
+      </a>
+    </div>
+  </article>
+  <article class="project card3 animated">
+    <h3 style="font-size: var(--text-2);">API Guardian Tales</h3>
+    <div class="tech">
+      <Mongodb />
+      <Nodejs />
+    </div>
+    <div class="links">
+      <a
+        href="https://api-guardian-tales.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="ir a la API de guardian tales"
+      >
+        <LinkIcon width="20" height="20" />
+         API
+      </a>
+    </div>
+  </article>
+  <article class="project card4 animated">
+    <h3 style="font-size: var(--text-2);">To do App</h3>
+    <div class="tech">
+      <NextjsIcon />
+      <Tailwind />
+    </div>
+    <div class="links">
+      <a
+        href="https://github.com/Danielmeedina/to-do-app"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="ir al proyecto de guardian tales en github"
+      >
+        <GithubIcon width="25" height="25" />
+         github
+      </a>
+      <a
+        href="https://to-do-app-danielmeedina.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="ir a pagina web de guardian tales"
+      >
+        <LinkIcon width="20" height="20" />
+         web
+      </a>
+    </div>
+  </article>
+  <article class="project card5 animated">
+    <a
+      href="https://github.com/Danielmeedina?tab=repositories"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="show-more"
+    >
+      Mas Proyectos
+      <Arrow />
+    </a>
+  </article>
+</section>
+
+<style>
+  #projects {
+    width: var(--container);
+    min-height: 650px;
+    margin: 0 auto;
+    display: grid;
+    padding: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 10px;
+    grid-template-areas:
+      "project2  project1 project1 project4"
+      "project2  project1 project1 project4"
+      "project3  title    title    project4"
+      "project3  project5 project5 project5";
+  }
+
+  .title {
+    grid-area: title;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 30px 5px 30px 5px;
+    animation-name: title;
+    animation-range: entry 10% cover 40%;
+  }
+  @keyframes title {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .title h2 {
+    font-size: var(--text-5);
+    color: transparent;
+    background: linear-gradient(180deg, white, #5ce1e6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: bouncing 2s ease infinite alternate;
+  }
+  @keyframes bouncing {
+    to {
+      transform: translateY(-15px);
+    }
+    from {
+      transform: translateY(15px);
+      filter: hue-rotate(1turn);
+    }
+  }
+
+  .project {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    gap: 15px;
+    transition: all 0.5s ease;
+  }
+  .project:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 2px 2px 15px white;
+  }
+
+  .project h3 {
+    color: rgb(var(--primary-color));
+    text-shadow: 2px 2px 3px rgb(var(--bg-color-2));
+    font-weight: 700;
+  }
+
+  .project p {
+    font-size: var(--text--1);
+  }
+
+  .card1 {
+    grid-area: project1;
+    animation-name: project1;
+    animation-range: entry 15% cover 50%;
+  }
+  @keyframes project1 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .card2 {
+    grid-area: project2;
+    animation-name: project2;
+    animation-range: entry 15% cover 50%;
+  }
+  @keyframes project2 {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  .card3 {
+    grid-area: project3;
+    animation-name: project3;
+    animation-range: entry 40% cover 60%;
+  }
+  @keyframes project3 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .card4 {
+    grid-area: project4;
+    animation-name: project4;
+    animation-range: entry 5% cover 20%;
+  }
+  @keyframes project4 {
+    0% {
+      opacity: 0;
+      transform: translateY(250px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  .card5 {
+    grid-area: project5;
+    animation-name: project5;
+    animation-range: entry 1% cover 10%;
+  }
+  @keyframes project5 {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  .card5:hover {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .card5 .show-more {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: row nowrap;
+    gap: 10px;
+    padding: 5px 10px;
+    font-size: var(--text-3);
+    font-weight: bold;
+    color: rgb(var(--primary-color));
+    text-decoration: none;
+  }
+
+  .show-more :global(svg) {
+    visibility: hidden;
+    position: relative;
+    top: 5px;
+    color: rgb(var(--text-color));
+  }
+  .show-more:hover :global(svg) {
+    visibility: visible;
+    position: relative;
+    top: 5px;
+    transform: translateX(0);
+    animation: arrow 1s ease 1 both;
+  }
+
+  @keyframes arrow {
+    100% {
+      transform: translateX(30px);
+    }
+  }
+
+  .project .tech {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .links a {
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 1px dotted white;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+  }
+  .project:hover .links a {
+    color: black;
+    border: 1px solid black;
+  }
+  .project .links a:hover {
+    box-shadow: 2px 5px 15px black;
+  }
+
+  @media (width <= 801px) {
+    #projects {
+      grid-template-areas:
+        "project2  project2 project1 project1"
+        "project2  project2 project1 project1"
+        "project3  title    title    title"
+        "project3  project4 project4 project4"
+        "project5  project5 project5 project5";
+    }
+  }
+
+  @media (width <= 550px) {
+    #projects {
+      grid-template-areas:
+        "title  title title title"
+        "project1  project1 project1 project1"
+        "project1  project1 project1 project1"
+        "project2  project2 project2 project2"
+        "project2  project2 project2 project2"
+        "project3  project3 project3 project3"
+        "project3  project3 project3 project3"
+        "project4  project4 project4 project4"
+        "project5  project5 project5 project5";
+    }
+  }
+</style>

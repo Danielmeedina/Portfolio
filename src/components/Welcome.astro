@@ -1,0 +1,162 @@
+---
+import Gmail from "../icons/Gmail.astro";
+import PdfIcon from "../icons/PdfIcon.astro";
+import Linkedin from "../icons/Linkedin.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
+import Illustration3 from "../imgs/Illustration3.astro";
+---
+
+<section class="welcome">
+  <article class="info">
+    <span class="title">Desarrollador web Frontend</span>
+    <h1>
+      Soy un apasionado desarrollador web con un compromiso inquebrantable hacia
+      la creación de experiencias en línea excepcionales. Estoy aquí para
+      convertir tu visión en una realidad digital impresionante.
+    </h1>
+    <div class="contact">
+      <a
+        href="/cv.pdf"
+        download
+        class="pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <PdfIcon width="20" height="20" color="#ffffff" />
+         Descargar CV
+      </a>
+      <a
+        href="https://www.linkedin.com/in/daniel-medina-828261242/"
+        class="linkedin"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Linkedin width="20" height="20" />
+         Linkedin
+      </a>
+      <a
+        href="https://github.com/Danielmeedina"
+        class="github"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <GithubIcon width="25" height="25" color="#ffffff" />
+         Github
+      </a>
+      <a
+        href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=danielmedina7778@gmail.com"
+        class="gmail"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Gmail width="20" height="20" />
+         Contactame
+      </a>
+    </div>
+  </article>
+  <Illustration3 />
+</section>
+
+<style>
+  .welcome {
+    width: var(--container);
+    min-height: 480px;
+    margin: 0 auto;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+  }
+  .info {
+    width: clamp(300px, 100%, 700px);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .title {
+    font-size: var(--text-5);
+    font-weight: 900;
+    color: transparent;
+    background: linear-gradient(
+      180deg,
+      rgb(var(--text-color)),
+      rgb(var(--primary-color))
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .welcome h1 {
+    font-size: var(--text-0);
+    font-weight: 400;
+    color: rgb(var(--text-color));
+  }
+
+  .welcome .contact {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 15px;
+  }
+  .welcome .contact a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .welcome .pdf {
+    color: rgb(223 32 38);
+    border: 1px solid rgb(223 32 38 / 0.5);
+  }
+  .welcome .pdf:hover {
+    color: white;
+    background-color: rgb(223 32 38 / 0.5);
+  }
+  .welcome .linkedin {
+    color: rgb(0 119 179);
+    border: 1px solid rgb(0 119 179 / 0.7);
+  }
+  .welcome .linkedin:hover {
+    color: white;
+    background-color: rgb(0 119 179 / 0.7);
+  }
+  .welcome .github {
+    color: rgb(255 255 255);
+    border: 1px solid rgb(255 255 255 / 0.4);
+  }
+  .welcome .github:hover {
+    color: white;
+    background-color: rgb(255 255 255 / 0.4);
+  }
+  .welcome .gmail {
+    color: white;
+    background-color: rgb(234 67 52 / 0.6);
+    border: 1px solid transparent;
+  }
+  .welcome .gmail:hover {
+    color: rgb(234 67 52);
+    background-color: transparent;
+    border: 1px solid rgb(234 67 52 / 0.6);
+  }
+  @media (771px <= width <= 1170px) {
+    .welcome :global(svg) {
+      display: none;
+    }
+  }
+  @media (width <= 771px) {
+    .welcome {
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  const gmail = document.querySelector(".gmail");
+
+  if ("ontouchstart" in window || navigator.maxTouchPoints) {
+    gmail.setAttribute("href", "mailto:danielmedina7778@gmail.com");
+  }
+</script>

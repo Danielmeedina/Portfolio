@@ -1,0 +1,144 @@
+---
+import Services1 from "../icons/Services1.astro";
+import Services2 from "../icons/Services2.astro";
+import Services3 from "../icons/Services3.astro";
+import Services4 from "../icons/Services4.astro";
+import Services5 from "../icons/Services5.astro";
+import Illustration from "../imgs/Illustration.astro";
+import Summary from "./Summary.astro";
+---
+
+<section id="services">
+  <h2 class="services-title">Servicios</h2>
+  <div class="card-container">
+    <div class="box-img animated">
+      <Illustration />
+    </div>
+    <aside class="info animated">
+      <Summary title="programación web" open>
+        <Services1 width="60" height="60" />
+        <p>
+          Desarrollo sitios y aplicaciones para plataformas web. Te ayudo a
+          construir tu proyecto de principio a fin: Frontend, Backend y Base de
+          datos.
+        </p>
+      </Summary>
+      <Summary title="diseño web">
+        <Services2 width="60" height="60" />
+        <p>
+          Convierto tus ideas en páginas web increíbles, óptimos, responsivos y
+          accesibles.
+        </p>
+      </Summary>
+      <Summary title="WPO">
+        <Services3 width="60" height="60" />
+        <p>
+          <b>Optimización del rendimiento web</b>. Hago que tus sitios y
+          aplicaciones web mejoren su carga y tiempo de respuesta
+        </p>
+      </Summary>
+      <Summary title="SEO">
+        <Services4 width="60" height="60" />
+        <p>
+          <b>Optimización de motores de búsqueda</b>. Optimizo tus sitios y
+          páginas web para mejorar su posición en los buscadores de forma
+          orgánica
+        </p>
+      </Summary>
+      <Summary title="Alojamiento web">
+        <Services5 width="60" height="60" />
+        <p>
+          ¿No tienes dominio y hosting web para tu proyecto? No te preocupes por
+          esas cosas complicadas, yo me encargo de ellas.
+        </p>
+      </Summary>
+    </aside>
+  </div>
+</section>
+
+<style>
+  #services {
+    width: var(--container);
+    min-height: 650px;
+    margin: 0 auto;
+    display: flex;
+    padding: 5px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+    margin-bottom: 10px;
+  }
+  .services-title {
+    font-weight: 700;
+    font-size: var(--text-5);
+    color: transparent;
+    background: linear-gradient(180deg, white, rgb(var(--primary-color)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin-bottom: 20px;
+  }
+  .card-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+    gap: 10px;
+  }
+
+  .box-img {
+    width: clamp(300px, 100%, 500px);
+    flex: 1 1;
+    animation-name: box-img;
+    animation-range: entry 40% cover 60%;
+  }
+  @keyframes box-img {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .info {
+    flex: 1 1;
+    width: clamp(300px, 100%, 600px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    gap: 10px;
+    animation-name: info;
+    animation-range: entry 20% cover 50%;
+  }
+  @keyframes info {
+    0% {
+      transform: translateY(200px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @media (width < 771px) {
+    .card-container {
+      flex-flow: column nowrap;
+      gap: 20px;
+    }
+  }
+</style>
+
+<script>
+  const details = document.querySelectorAll("details");
+
+  details.forEach((detail) => {
+    detail.addEventListener("click", () => {
+      details.forEach((otherDetails) => {
+        if (otherDetails !== detail) {
+          otherDetails.removeAttribute("open");
+        }
+      });
+    });
+  });
+</script>
