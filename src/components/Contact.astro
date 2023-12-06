@@ -4,7 +4,7 @@ import Illustration2 from "../imgs/Illustration2.astro";
 ---
 
 <section id="contact">
-  <h2 class="contact-title">Trabajemos Juntos</h2>
+  <h2 class="contact-title">Let's work together</h2>
   <div class="card-container">
     <aside class="info">
       <a
@@ -25,29 +25,30 @@ import Illustration2 from "../imgs/Illustration2.astro";
             type="text"
             id="name"
             name="Nombre"
-            required=""
+            required
             autocomplete="off"
           />
-          <label for="name" class="label">Nombre</label>
+          <label for="name" class="label">Name</label>
         </div>
         <div class="input-container">
           <input
             type="email"
             id="email"
             name="Email"
-            required=""
+            required
             autocomplete="off"
           />
-          <label for="email" class="label">Correo</label>
+          <label for="email" class="label">Email</label>
         </div>
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="box" />
         <textarea
           class="comment"
           name="Comentario"
+          required
           cols="27"
           rows="6"
-          placeholder="Deja tu mensaje"></textarea>
+          placeholder="Write your message"></textarea>
         <button type="submit">
           <div class="svg-wrapper-1">
             <div class="svg-wrapper">
@@ -65,7 +66,7 @@ import Illustration2 from "../imgs/Illustration2.astro";
               </svg>
             </div>
           </div>
-          <span>Enviar</span>
+          <span>Send</span>
         </button>
       </form>
     </aside>
@@ -129,6 +130,7 @@ import Illustration2 from "../imgs/Illustration2.astro";
     padding: 10px;
     border: 1px solid rgb(var(--primary-color));
     border-radius: 5px;
+    background-color: rgb(var(--bg-color-3));
   }
 
   .contact-gmail {
